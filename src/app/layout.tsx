@@ -18,8 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="fixed z-10 top-0 left-0 right-0 px-6 py-3 flex flex-row items-center justify-between bg-slate-700 text-slate-100">
-          <h1 className="text-lg font-bold">{`${metadata.title}`}</h1>
+        <header className="fixed z-10 top-0 left-0 right-0 px-9 py-3 flex flex-row items-center justify-between bg-slate-700 text-slate-100">
+          <h1 className="text-lg font-bold select-none">{`${metadata.title}`}</h1>
           <div>
             <a
               className="text-lg"
