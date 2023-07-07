@@ -53,3 +53,15 @@ jobs:
           version: ${{ steps.get_version.outputs.version }}
           git_commit_sha: ${{ github.sha }}
           git_tag_prefix: 'v'
+
+      - name: Release
+        id: release_drafter
+        uses: release-drafter/release-drafter@v5
+        if: ${{ steps.check_tag.outputs.tag == '' }}
+        with:
+          config-name: release-drafter.yml
+          version: 'v${{ steps.get_version.outputs.version }}'
+          publish: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
