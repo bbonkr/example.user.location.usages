@@ -45,8 +45,6 @@ export default function Home() {
             },
             isLoadingGeolocation: false,
           }));
-
-          console.info('location: ', position);
         },
         (err) => {
           setHomeState((prevState) => ({
