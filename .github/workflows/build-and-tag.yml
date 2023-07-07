@@ -38,13 +38,13 @@ jobs:
           project: package.json
 
       - name: check tag exists
-        uses: bbonkr/git-tag-check-action@v1.0.18
+        uses: bbonkr/git-tag-check-action@v1
         id: check_tag
         with:
           tag: 'v${{ steps.get_version.outputs.version }}'
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: package-version-to-git-tag
+      - name: Create git tag
         uses: pkgdeps/git-tag-action@v2
         if: ${{ steps.check_tag.outputs.tag == '' }}
         with:
