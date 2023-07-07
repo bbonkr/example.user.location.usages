@@ -3,7 +3,11 @@ import { LocationHelper } from './LocationHelper';
 
 export class IpApiLocationHelper implements LocationHelper {
   public async getLocation(): Promise<LocationResponseModel> {
-    const fetchResponse = await fetch('http://ip-api.com/json');
+    const fetchResponse = await fetch('http://ip-api.com/json', {
+      headers: {
+        ['Content-Security-Policy']: `default-src 'self'; script-src 'self' 'unsafe-inline'; connect-src http://ip-api.com`,
+      },
+    });
     const data: LocationResponseModel = await fetchResponse.json();
 
     if (!data) {
