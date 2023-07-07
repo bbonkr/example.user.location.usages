@@ -8,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: 'upgrade-insecure-requests',
+            value: `default-src 'self' ip-api.com`,
           },
         ],
       },
