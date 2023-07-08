@@ -1,7 +1,7 @@
-import { LocationResponseModel } from './LocationResponseModel';
-
 export interface LocationHelper {
-  getLocation(): Promise<LocationResponseModel>;
+  getEndpoint(argument?: unknown): string;
+
+  getLocation(): Promise<unknown>;
 
   getHelpDocument(): string;
 }
